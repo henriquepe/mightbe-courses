@@ -1,18 +1,20 @@
 import React from 'react';
 import { FiLogIn, FiPrinter } from 'react-icons/fi';
 
+
 import { Form } from '@unform/web';
 import {
   Container,
   WorkPresentationContainer,
   MarketingArea,
-  MenuContainer,
   LoginContainer,
+  MightBeLogo,
+  SignupButton
 } from './styles';
 
 import tagImage from '../../assets/tag.svg';
-import Input from '../../Components/Input';
-import Button from '../../Components/Button';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 interface FormDataProps {
   email: string;
@@ -27,28 +29,24 @@ const SignIn: React.FC = () => {
   return (
     <Container>
       <WorkPresentationContainer>
-        <strong>
+        <MightBeLogo>
           <img src={tagImage} alt="brackets" />
           MightBe Development
-        </strong>
+        </MightBeLogo>
         <MarketingArea>
-          <h1>Aprenda programação.</h1>
-          <h1>Do começo.</h1>
-          <h1>Ao fim.</h1>
+          <h1>Aprenda programação</h1>
+          <h1>do começo</h1>
+          <h1>ao fim.</h1>
 
-          <div>
-            <a href="signup">
-              <FiLogIn size={20} />
+          <SignupButton to="/register">
+
+              <FiLogIn size={30} />
               <strong>Cadastre-se</strong>
-            </a>
-          </div>
+
+          </SignupButton>
         </MarketingArea>
 
-        <MenuContainer>
-          <a href="teste">Cursos</a>
-          <a href="teste">Instrutor</a>
-          <a href="teste">Material gratuito</a>
-        </MenuContainer>
+        
       </WorkPresentationContainer>
       <LoginContainer>
         <img src={tagImage} alt="brackets" />
@@ -62,7 +60,7 @@ const SignIn: React.FC = () => {
         <Form onSubmit={handleSubmit}>
           <Input name="email" placeholder="E-mail" type="text" />
           <Input name="senha" placeholder="Senha" type="password" />
-          <Button name="login">CODE</Button>
+          <Button redirect="/launchBoard" name="login">CODE</Button>
         </Form>
       </LoginContainer>
     </Container>

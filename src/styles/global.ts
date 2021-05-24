@@ -9,6 +9,11 @@ export default createGlobalStyle`
     outline: 0;
   }
 
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     background: #1A1D20;
     color: #FFF;

@@ -1,7 +1,8 @@
 import { shade } from 'polished';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   background: ${shade(0.5, '#555ee6')};
   border-radius: 10px;
   border: 0;
